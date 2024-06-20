@@ -18,7 +18,8 @@ export default function page() {
   const [buttonDisabled, setbuttonDisabled] = useState(true);
   const [loading, setloading] = useState(false);
 
-  const onSignup = async () => {
+  const onSignup = async (e: any) => {
+    e.preventDefault();
     try {
       await axios.post(`/api/users/sign-up`, user);
       toast.success("Signup Success");

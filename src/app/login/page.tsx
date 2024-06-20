@@ -17,9 +17,11 @@ export default function page() {
   const [buttonDisabled, setbuttonDisabled] = useState(true);
   const [loading, setloading] = useState(false);
 
-  const onLogin = async () => {
+  const onLogin = async (e: any) => {
+    e.preventDefault();
     try {
-      await axios.post(`/api/users/login`, user);
+      const response = await axios.post(`/api/users/login`, user);
+      console.log(response);
       toast.success("Login Success");
       router.push(`/profile`);
     } catch (error: any) {
