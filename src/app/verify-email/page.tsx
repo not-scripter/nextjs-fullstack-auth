@@ -37,13 +37,13 @@ export default function page() {
   }, [router]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center h-dvh py-2">
       <h1 className="text-4xl font-bold pb-8">Verify Email</h1>
       {(verified && (
         <div>
-          <h2 className="text-green-400 p-8">Verified</h2>
+          <h2 className="text-green p-8">Verified</h2>
           <Link
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+            className="p-2 border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text"
             href={"/login"}
           >
             Login
@@ -53,7 +53,7 @@ export default function page() {
         (token.length > 0 && (
           <div>
             <button
-              className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+              className="py-2 px-4 border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text"
               type="button"
               onClick={onVerify}
             >
@@ -61,9 +61,11 @@ export default function page() {
             </button>
           </div>
         )) || (
-          <div>
-            <h2>Please Verify Your Email</h2>
-            <p>please check your inbox to complete the signup process</p>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-2xl">Please Verify Your Email</h2>
+            <p className="text-sm">
+              please check your inbox to complete the signup process
+            </p>
           </div>
         )}
     </div>

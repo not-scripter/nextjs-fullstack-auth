@@ -15,6 +15,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@catppuccin/tailwindcss")],
 };
 export default config;

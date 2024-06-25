@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import ThemeProvider from "@/components/ui/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children} <Toaster />
+      <body className="bg-base text-text">
+        <ThemeProvider
+          attribute="class"
+          enableSystem
+          defaultTheme="system"
+          value={{
+            light: "latte",
+            dark: "mocha",
+            system: "system",
+          }}
+          disableTransitionOnChange
+          themes={["latte", "frappe", "macchiato", "mocha"]}
+        >
+          {children}
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            gutter={8}
+            containerClassName=""
+            containerStyle={{}}
+            toastOptions={{
+              // Define default options
+              className: "",
+              duration: 5000,
+              style: {
+                background: "#1e1e2e",
+                color: "#cdd6f4",
+              },
+            }}
+          />
+        </ThemeProvider>
         <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
         <script>eruda.init();</script>
       </body>

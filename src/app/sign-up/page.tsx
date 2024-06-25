@@ -44,7 +44,7 @@ export default function page() {
   return (
     <form
       onSubmit={onSignup}
-      className="flex flex-col items-center justify-center min-h-screen py-2 px-8"
+      className="flex flex-col items-center justify-center h-dvh py-2 px-8"
     >
       <h1 className="text-4xl font-bold pb-8">
         {loading ? "Processing" : "SignUp"}
@@ -59,7 +59,7 @@ export default function page() {
         value={user.username}
         onChange={(e) => setuser({ ...user, username: e.target.value })}
         placeholder="Enter your Username"
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black w-full"
+        className="bg-base p-2 border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text w-full"
       />
       <label htmlFor="email" className="w-full left-0">
         Email
@@ -70,7 +70,7 @@ export default function page() {
         value={user.email}
         onChange={(e) => setuser({ ...user, email: e.target.value })}
         placeholder="Enter your Email Address"
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black w-full"
+        className="bg-base p-2 border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text w-full"
       />
       <label htmlFor="password" className="w-full left-0">
         Password
@@ -81,18 +81,18 @@ export default function page() {
         value={user.password}
         onChange={(e) => setuser({ ...user, password: e.target.value })}
         placeholder="Enter your Password"
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black w-full"
+        className="bg-base p-2 border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text w-full"
       />
       <button
         type="submit"
         disabled={buttonDisabled}
-        className={`py-2 w-full border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 ${buttonDisabled ? "opacity-50" : "opacity-100"}`}
+        className={`py-2 w-full border border-text/70 rounded-lg mb-4 focus:outline-none focus:border-text ${buttonDisabled ? "opacity-50" : "opacity-100"}`}
       >
         SignUp
       </button>
       <p>
         Allready have an Account ?{" "}
-        <Link href={"/login"} className="text-blue-400">
+        <Link href={"/login"} className="text-blue">
           Login
         </Link>
       </p>
